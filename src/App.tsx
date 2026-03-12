@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
+import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence } from 'motion/react';
 import React, { useRef, useState } from 'react';
 import { ChevronDown, ArrowRight, Heart, Wind, Droplets, Flame, Sparkles, Leaf, Star, Instagram, Mail, Check, Calendar, Users, Euro, Clock } from 'lucide-react';
 
@@ -66,9 +66,14 @@ function FloatingElement({ children, speed = 1, className = "" }: { children: Re
 }
 
 export default function App() {
-  const { scrollYProgress } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const [activePillar, setActivePillar] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 50);
+  });
 
   const pillars = [
     { title: "Presence", icon: Heart, quote: "To be here, fully, without the urge to escape." },
@@ -86,8 +91,8 @@ export default function App() {
       />
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full p-6 flex justify-between items-center z-40 mix-blend-difference text-aman-offwhite">
-        <div className="font-display text-2xl tracking-widest uppercase font-bold">Aman Hati</div>
+      <nav className={`fixed top-0 w-full p-6 flex justify-between items-center z-40 transition-all duration-500 ${scrolled ? 'bg-aman-dark/80 backdrop-blur-md shadow-lg shadow-black/10' : 'mix-blend-difference'} text-aman-offwhite`}>
+        <img src="/AMAN HATI_LOGO_white.png" alt="Aman Hati" className="h-10 w-auto" />
         <a href="#apply" className="px-6 py-2 rounded-full bg-aman-light text-aman-dark hover:bg-aman-offwhite transition-colors duration-300">
           Apply Now
         </a>
@@ -106,14 +111,14 @@ export default function App() {
         </motion.div>
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-40">
-          <motion.h1 
+          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-display mb-6 tracking-tighter"
+            className="mb-6 flex justify-center"
           >
-            AMAN HATI
-          </motion.h1>
+            <img src="/AMAN HATI_LOGO_white.png" alt="Aman Hati" className="h-32 md:h-48 lg:h-56 w-auto" />
+          </motion.div>
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -165,12 +170,12 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6 text-xl text-aman-grey">
               <p>You care deeply. You notice everything. You create quietly. You carry intensity silently.</p>
-              <p>And when attention turns toward you — in relationships, in rooms, in your work — your body reacts.</p>
+              <p>And when attention turns toward you - in relationships, in rooms, in your work - your body reacts.</p>
               <p className="font-serif text-2xl text-aman-highlight italic">Too much. Not enough.</p>
             </div>
             <div className="space-y-6 text-xl text-aman-grey">
               <p>So you soften yourself. Or you overcompensate. Or you retreat.</p>
-              <p>This isn't lack of confidence. It's a nervous system that never learned how to feel safe while being seen in a world that is loud and fast.</p>
+              <p>This isn't lack of confidence. It's a nervous system that never learned how to feel safe while being seen in a world that is loud and fast. Sensitivity isn't the problem. The lack of safety is. When there is no internal safety, sensitivity becomes overwhelm. When safety grows - sensitivity becomes a superpower.</p>
             </div>
           </div>
         </div>
@@ -186,6 +191,29 @@ export default function App() {
         </FloatingElement>
 
         <div className="max-w-6xl mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto mb-16 text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-serif text-aman-light mb-8"
+            >
+              Nothing about sensitivity disappears.<br/>What changes is the relationship to it.
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="space-y-4 text-xl font-light leading-relaxed"
+            >
+              <p>The nervous system steadies. The body softens under attention. Expression costs less energy.</p>
+              <p>You stop shrinking. You stop pushing. You respond instead of react.</p>
+              <p>And being seen - in your relationships, your creativity, your leadership - no longer feels like survival. It feels aligned.</p>
+              <p className="font-serif text-2xl text-aman-light italic">So life feels less overwhelming - because there are anchors as we move:</p>
+            </motion.div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-16">
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
@@ -195,11 +223,11 @@ export default function App() {
             >
               <h3 className="text-3xl font-serif mb-8 text-aman-light">From</h3>
               <ul className="space-y-4 text-lg">
-                <li className="flex items-start gap-3"><span className="text-aman-highlight mt-1">✕</span> Overthinking before speaking</li>
-                <li className="flex items-start gap-3"><span className="text-aman-highlight mt-1">✕</span> Holding back to avoid tension</li>
-                <li className="flex items-start gap-3"><span className="text-aman-highlight mt-1">✕</span> Emotional overwhelm or sudden shutdown</li>
-                <li className="flex items-start gap-3"><span className="text-aman-highlight mt-1">✕</span> Absorbing other people's moods</li>
-                <li className="flex items-start gap-3"><span className="text-aman-highlight mt-1">✕</span> Second-guessing intuition</li>
+                <li className="flex items-start gap-3"><span className="text-aman-offwhite/70 mt-1">✕</span> Overthinking before speaking</li>
+                <li className="flex items-start gap-3"><span className="text-aman-offwhite/70 mt-1">✕</span> Holding back to avoid tension</li>
+                <li className="flex items-start gap-3"><span className="text-aman-offwhite/70 mt-1">✕</span> Emotional overwhelm or sudden shutdown</li>
+                <li className="flex items-start gap-3"><span className="text-aman-offwhite/70 mt-1">✕</span> Absorbing other people's moods</li>
+                <li className="flex items-start gap-3"><span className="text-aman-offwhite/70 mt-1">✕</span> Second-guessing intuition</li>
               </ul>
             </motion.div>
             
@@ -215,7 +243,7 @@ export default function App() {
                 <li className="flex items-start gap-3"><span className="text-aman-medium mt-1">✓</span> Pausing before responding</li>
                 <li className="flex items-start gap-3"><span className="text-aman-medium mt-1">✓</span> Speaking honestly without collapsing</li>
                 <li className="flex items-start gap-3"><span className="text-aman-medium mt-1">✓</span> Feeling emotions without being flooded</li>
-                <li className="flex items-start gap-3"><span className="text-aman-medium mt-1">✓</span> Recognizing what is yours — and what isn't</li>
+                <li className="flex items-start gap-3"><span className="text-aman-medium mt-1">✓</span> Recognizing what is yours - and what isn't</li>
                 <li className="flex items-start gap-3"><span className="text-aman-medium mt-1">✓</span> Trusting sensitivity as information</li>
               </ul>
             </motion.div>
@@ -289,19 +317,19 @@ export default function App() {
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-serif text-aman-dark mb-6">The Framework</h2>
             <p className="text-xl text-aman-grey max-w-2xl mx-auto">
-              This journey moves from regulation to embodied visibility — step by step.
+              This journey moves from regulation to embodied visibility - step by step. Each phase builds on the previous one and throughout the process, simple rituals become anchors that stabilize change in daily life. Because insights are not enough. To live by them is the key.
             </p>
           </div>
 
           <div className="space-y-2">
             <ExpandableText title="Earth – Safety & Regulation" icon={Leaf}>
-              <p>When the system is on alert, everything feels heavier. Conversations feel charged. Attention feels exposing. Rest feels restless.</p>
-              <p className="mt-4">At the beginning of AMAN HATI, we slow the system down. You learn to recognize activation. To regulate before reacting. To return to your body instead of leaving it.</p>
+              <p>When the system is on alert, everything feels heavier. Conversations feel charged. Attention feels exposing. Rest feels restless. So you brace - or push - or withdraw.</p>
+              <p className="mt-4">At the beginning of AMAN HATI, we slow the system down. You learn to recognize activation. To regulate before reacting. To return to your body instead of leaving it. </p>
             </ExpandableText>
             
             <ExpandableText title="Water – Emotional Clarity" icon={Droplets}>
-              <p>Intensity without clarity becomes overwhelm. You absorb what isn't yours. You question your reactions. You feel deeply — but struggle to name it.</p>
-              <p className="mt-4">As safety increases, we bring clarity to what moves inside you. Emotions become information instead of chaos. You learn to stay with what arises — without drowning in it.</p>
+              <p>Intensity without clarity becomes overwhelm. You absorb what isn't yours. You question your reactions. You feel deeply - but struggle to name it.</p>
+              <p className="mt-4">As safety increases, we bring clarity to what moves inside you. Emotions become information instead of chaos. You learn to stay with what arises - without drowning in it. And slowly, confusion turns into clarity and this turns into a deeper self-trust. </p>
             </ExpandableText>
             
             <ExpandableText title="Fire – Protective Patterns & Masks" icon={Flame}>
@@ -311,13 +339,21 @@ export default function App() {
             
             <ExpandableText title="Air – Communication & Boundaries" icon={Wind}>
               <p>Without safety, expression collapses or overcompensates. You silence yourself. Or you push too hard. Or you leave conversations wishing you had spoken differently.</p>
-              <p className="mt-4">As regulation stabilizes, expression becomes practice. You experiment with speaking from presence. Listening without losing yourself. Setting boundaries without armor.</p>
+              <p className="mt-4">As regulation stabilizes, expression becomes practice. You experiment with speaking from presence. Listening without losing yourself. Setting boundaries without armor. Your voice begins to feel like yours truly. </p>
             </ExpandableText>
             
             <ExpandableText title="Space – Integration" icon={Sparkles}>
-              <p>Growth that isn't anchored dissolves. You expand — then contract. Show up — then disappear.</p>
-              <p className="mt-4">Toward the closing phase, we anchor what has shifted. Through ritual and repetition, safety becomes familiar. Not a peak state. A baseline.</p>
+              <p>Growth that isn't anchored dissolves. You expand - then contract. Show up - then disappear.</p>
+              <p className="mt-4">Toward the closing phase, we anchor what has shifted. Through ritual and repetition, safety becomes familiar. Not a peak state. A baseline. From here, visibility stops feeling like exposure and starts to feel aligned. So finally you leave behindt the constant state of readiness and let yourself be seen without feeling threatened by it. But learn to love it! </p>
             </ExpandableText>
+          </div>
+
+          <div className="mt-16 p-10 rounded-3xl bg-aman-light/40 border border-aman-medium/20 text-center">
+            <h3 className="text-3xl md:text-4xl font-display tracking-widest uppercase mb-4 text-aman-dark">AMAN HATI</h3>
+            <p className="text-lg text-aman-grey italic mb-4">In Bahasa, Aman means safe. Hati means heart.</p>
+            <p className="text-xl text-aman-dark leading-relaxed max-w-2xl mx-auto">
+              A safe heart is not a heart without fear. It is a heart that feels safe enough to stay open, honest and present - even during change. This journey builds that safety.
+            </p>
           </div>
         </div>
       </ParallaxSection>
@@ -508,9 +544,9 @@ export default function App() {
               <div>
                 <h3 className="text-3xl font-serif mb-6 text-aman-medium">About Nadja</h3>
                 <div className="space-y-4 text-xl text-aman-grey leading-relaxed">
-                  <p>My name means Hope — the color of the heart. It also means river. Channel. The one who calls.</p>
-                  <p>I work with sensitive, intuitive and creative people — because I am one.</p>
-                  <p>I know what it means to feel deeply in a world that moves fast. To sense everything in a room. To question whether you are too much — or not enough.</p>
+                  <p>My name means Hope - the color of the heart. It also means river. Channel. The one who calls.</p>
+                  <p>I work with sensitive, intuitive and creative people - because I am one.</p>
+                  <p>I know what it means to feel deeply in a world that moves fast. To sense everything in a room. To question whether you are too much - or not enough.</p>
                   <p>I hold spaces where truth surfaces without pressure. Where intensity is felt, not fixed. Because expression becomes possible when the body feels safe.</p>
                 </div>
               </div>
@@ -519,10 +555,10 @@ export default function App() {
                 <h3 className="text-3xl font-serif mb-6 text-aman-medium">The Path I Walk</h3>
                 <div className="space-y-4 text-xl text-aman-grey leading-relaxed">
                   <p>My work isn't built on theory. It's built on thresholds.</p>
-                  <p>For years, I dimmed my light — appearing capable outside while doubting myself inside.</p>
-                  <p>I know the cost of shrinking. The exhaustion of overcompensating. The tension of wanting to be seen — and fearing it at the same time.</p>
+                  <p>For years, I dimmed my light - appearing capable outside while doubting myself inside.</p>
+                  <p>I know the cost of shrinking. The exhaustion of overcompensating. The tension of wanting to be seen - and fearing it at the same time.</p>
                   <p>I didn't bypass crisis or loss. I learned to stay.</p>
-                  <p>That's where inner safety was born. Not as confidence — as steadiness.</p>
+                  <p>That's where inner safety was born. Not as confidence - as steadiness.</p>
                 </div>
               </div>
 
@@ -530,12 +566,12 @@ export default function App() {
                 <h3 className="text-3xl font-display mb-6 text-aman-medium">The Practice Behind AMAN HATI</h3>
                 <div className="space-y-4 text-xl text-aman-grey leading-relaxed">
                   <p>AMAN HATI is not about performance. It is about regulation.</p>
-                  <p>Drawing from 36 years of life, over a decade of devoted inner work, and international facilitation — from coaching to mindful leadership spaces to intimate retreats — I bridge lived experience with studied wisdom.</p>
+                  <p>Drawing from 36 years of life, over a decade of devoted inner work, and international facilitation - from coaching to mindful leadership spaces to intimate retreats - I bridge lived experience with studied wisdom. With a background in the corporate world I understnad both sides and know how it feels to pivot. </p>
                   <p className="font-serif text-2xl mt-8 mb-4">My approach integrates:</p>
                   <ul className="space-y-2">
-                    <li>• <span className="font-medium">Ancient teachings</span> — to remember what we've forgotten.</li>
-                    <li>• <span className="font-medium">Somatic practice</span> — to ground insight in the body.</li>
-                    <li>• <span className="font-medium">Honest self-inquiry</span> — to loosen identities built around "too much" and "not enough."</li>
+                    <li>• <span className="font-medium">Ancient teachings</span> - to remember what we've forgotten.</li>
+                    <li>• <span className="font-medium">Somatic practice</span> - to ground insight in the body.</li>
+                    <li>• <span className="font-medium">Honest self-inquiry</span> - to loosen identities built around who we think we should be and discovering the core wounds to finally start to break free. </li>
                   </ul>
                   <p className="mt-8">This work is simple, but not easy.</p>
                   <p className="font-serif text-2xl text-aman-highlight italic">We regulate. We feel. We integrate.</p>
@@ -547,8 +583,8 @@ export default function App() {
                 <h3 className="text-3xl font-serif mb-6 text-aman-medium">Life as Ceremony</h3>
                 <div className="space-y-4 text-xl text-aman-grey leading-relaxed">
                   <p>I don't believe we inspire by being perfect. We inspire by walking honestly.</p>
-                  <p>To become "fully yourself" is, paradoxically, becoming nobody — letting go of the masks until what remains feels true.</p>
-                  <p>Hope is not wishful thinking. Hope is what remains when you decide to stay with yourself — especially when being seen feels uncomfortable.</p>
+                  <p>To become "fully yourself" is, paradoxically, becoming nobody - letting go of the masks until what remains feels true.</p>
+                  <p>Hope to me is not wishful thinking. Hope is what remains when you decide to love yourself, see the beauty of life and share your all - especially when being seen feels uncomfortable.</p>
                 </div>
               </div>
             </div>
@@ -569,7 +605,7 @@ export default function App() {
           </motion.h2>
           
           <div className="space-y-8 text-xl font-light leading-relaxed">
-            <p>You're sensitive — and tired of managing yourself just to fit in.<br/>You feel deeply. Think deeply. Create deeply.</p>
+            <p>You're sensitive - and tired of managing yourself just to fit in.<br/>You feel deeply. Think deeply. Create deeply.</p>
             <p>And you know there is more in you.<br/><span className="text-aman-highlight">More voice. More presence. More truth.</span></p>
             <p>But when it's time to take up space, your body tightens.<br/><span className="italic">Too much. Not enough.</span></p>
             <p>And that hesitation costs you:<br/>Clarity. Momentum. Aligned relationships. Opportunities to be seen for who you are.</p>
@@ -577,11 +613,11 @@ export default function App() {
             <div className="mt-12 p-8 border border-aman-medium/30 rounded-3xl bg-aman-medium/10">
               <h3 className="text-2xl font-display mb-6 text-aman-light">AMAN HATI is for those ready to move from:</h3>
               <ul className="space-y-4">
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Overwhelm → Regulation</li>
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Self-doubt → Self-trust</li>
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Reactivity → Response</li>
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Hiding → Expression</li>
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Survival → Sustainable visibility</li>
+                <li className="flex items-center gap-3">Overwhelm → Regulation</li>
+                <li className="flex items-center gap-3">Self-doubt → Self-trust</li>
+                <li className="flex items-center gap-3">Reactivity → Response</li>
+                <li className="flex items-center gap-3">Hiding → Expression</li>
+                <li className="flex items-center gap-3">Survival → Sustainable visibility</li>
               </ul>
             </div>
             
@@ -653,11 +689,9 @@ export default function App() {
       {/* Footer */}
       <footer className="py-12 px-6 bg-aman-dark text-aman-light/60">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-display text-2xl tracking-widest uppercase font-bold text-aman-offwhite">
-            Aman Hati
-          </div>
+          <img src="/AMAN HATI_LOGO_white.png" alt="Aman Hati" className="h-10 w-auto" />
           <div className="flex gap-6">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-aman-highlight transition-colors">
+            <a href="https://instagram.com/amanhati.space" target="_blank" rel="noopener noreferrer" className="hover:text-aman-highlight transition-colors">
               <Instagram className="w-6 h-6" />
             </a>
             <a href="mailto:hello@amanhati.space" className="hover:text-aman-highlight transition-colors">
