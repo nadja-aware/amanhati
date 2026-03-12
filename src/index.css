@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+/* 
+  IMPORTANT: Oilvare Base is a custom/premium font, not a Google Font.
+  To make it work, you MUST either:
+  1. Upload the font files (e.g., OilvareBase.woff2) to the /public folder
+  2. OR add an Adobe Fonts <link> tag to index.html if you are using Typekit
+*/
+@font-face {
+  font-family: 'Oilvare Base';
+  src: url('/OilvareBase.woff2') format('woff2'),
+       url('/OilvareBase.woff') format('woff'),
+       url('/OilvareBase.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Akzidenz-Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-display: "Oilvare Base", "Fraunces", ui-serif, Georgia, serif;
+  
+  --color-aman-dark: #2f4f3e;
+  --color-aman-medium: #6f8f7b;
+  --color-aman-light: #b7cfbf;
+  --color-aman-offwhite: #f8f8f6;
+  --color-aman-grey: #494949;
+  --color-aman-highlight: #8c7398; /* Brighter purple for highlights/buttons */
+}
+
+body {
+  background-color: var(--color-aman-offwhite);
+  color: var(--color-aman-grey);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-aman-offwhite);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-aman-medium);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-aman-dark);
+}
