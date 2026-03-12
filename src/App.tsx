@@ -107,7 +107,7 @@ export default function App() {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           {/* REPLACE WITH UPLOADED HERO IMAGE URL */}
-          <img src="https://picsum.photos/seed/amanhati-hero/1920/1080" alt="Aman Hati Hero" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src="/pictures/1.webp" alt="Aman Hati Hero" className="w-full h-full object-cover" />
         </motion.div>
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-40">
@@ -256,7 +256,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="rounded-3xl overflow-hidden shadow-xl border border-aman-medium/20 h-[60vh] md:h-[70vh]">
             {/* REPLACE WITH UPLOADED IMAGE URL */}
-            <img src="https://picsum.photos/seed/pillars/1920/1080" alt="Transition to Pillars" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/pictures/2.webp" alt="Transition to Pillars" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -442,56 +442,56 @@ export default function App() {
         </div>
       </section>
 
-      {/* Image Before Private Companionship */}
-      <section className="pt-16 pb-8 px-6 md:px-12 bg-aman-dark">
-        <div className="max-w-6xl mx-auto">
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-aman-medium/20 h-[60vh] md:h-[70vh]">
-            {/* REPLACE WITH UPLOADED IMAGE URL */}
-            <img src="https://picsum.photos/seed/private/1920/1080" alt="Transition to Private Companionship" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-          </div>
-        </div>
-      </section>
-
       {/* Private Companionship */}
-      <section className="pt-8 pb-32 px-6 md:px-12 bg-aman-dark text-aman-offwhite">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-serif mb-8 text-aman-light">Private companionship</h2>
-          <div className="space-y-8 text-xl font-light leading-relaxed">
-            <p>The foundation remains AMAN HATI: inner safety, emotional clarity, self-trust and authentic expression. But in 1:1 work, we go further.</p>
-            <p>These spaces are especially supportive for sensitive leaders, creatives and visionaries who feel stuck - creatively, professionally or personally. Who are navigating transitional phases or simply want to work in a private setting to decisively move into their next chapter.</p>
-            
-            <div className="py-8">
-              <h3 className="text-2xl font-serif mb-6 text-aman-light">Together, we work on:</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Regulating the inner noise that blocks expression</li>
-                <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Clarifying what wants to be created</li>
-                <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Identifying and dissolving self-sabotaging patterns</li>
-                <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Defining concrete next steps</li>
-                <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Building the courage to be seen</li>
-              </ul>
+      <section className="py-32 px-6 md:px-12 bg-aman-dark text-aman-offwhite">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-12 md:gap-16">
+            <div className="md:col-span-5">
+              <div className="sticky top-32 rounded-3xl overflow-hidden shadow-xl border border-aman-medium/20">
+                <img src="/pictures/3.webp" alt="Private Companionship" className="w-full h-auto object-cover" />
+              </div>
             </div>
-            
-            <p className="text-2xl font-serif text-aman-light">This is not only inner work. It is creative motion.</p>
-            <p>A container to birth what is ready to come through you - and to support you in sharing it with the world.</p>
-            
-            <div className="mt-12 p-8 border border-aman-medium/30 rounded-3xl bg-aman-medium/10">
-              <h3 className="text-2xl font-serif mb-6 text-aman-light">Available as:</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Individual 90min deep-dive sessions</li>
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> 4 - session intensive immersion</li>
-                <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Tailor-made companionship journeys of 3 - 6 months</li>
-              </ul>
-            </div>
-            
-            <p className="mt-8 italic">If this feels aligned, reach out to explore what would serve you best.</p>
-            
-            <div className="mt-12">
-              <a 
-                href="mailto:hello@amanhati.space"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-aman-highlight text-white rounded-full text-lg font-medium hover:bg-opacity-90 transition-colors duration-300"
-              >
-                Send Inquiry
-              </a>
+
+            <div className="md:col-span-7">
+              <h2 className="text-4xl md:text-6xl font-serif mb-8 text-aman-light">Private companionship</h2>
+              <div className="space-y-8 text-xl font-light leading-relaxed">
+                <p>The foundation remains AMAN HATI: inner safety, emotional clarity, self-trust and authentic expression. But in 1:1 work, we go further.</p>
+                <p>These spaces are especially supportive for sensitive leaders, creatives and visionaries who feel stuck - creatively, professionally or personally. Who are navigating transitional phases or simply want to work in a private setting to decisively move into their next chapter.</p>
+                
+                <div className="py-8">
+                  <h3 className="text-2xl font-serif mb-6 text-aman-light">Together, we work on:</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Regulating the inner noise that blocks expression</li>
+                    <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Clarifying what wants to be created</li>
+                    <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Identifying and dissolving self-sabotaging patterns</li>
+                    <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Defining concrete next steps</li>
+                    <li className="flex items-center gap-3"><Check className="text-aman-highlight w-5 h-5"/> Building the courage to be seen</li>
+                  </ul>
+                </div>
+                
+                <p className="text-2xl font-serif text-aman-light">This is not only inner work. It is creative motion.</p>
+                <p>A container to birth what is ready to come through you - and to support you in sharing it with the world.</p>
+                
+                <div className="mt-12 p-8 border border-aman-medium/30 rounded-3xl bg-aman-medium/10">
+                  <h3 className="text-2xl font-serif mb-6 text-aman-light">Available as:</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Individual 90min deep-dive sessions</li>
+                    <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> 4 - session intensive immersion</li>
+                    <li className="flex items-center gap-3"><ArrowRight className="text-aman-highlight w-5 h-5"/> Tailor-made companionship journeys of 3 - 6 months</li>
+                  </ul>
+                </div>
+                
+                <p className="mt-8 italic">If this feels aligned, reach out to explore what would serve you best.</p>
+                
+                <div className="mt-12">
+                  <a 
+                    href="mailto:hello@amanhati.space"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-aman-highlight text-white rounded-full text-lg font-medium hover:bg-opacity-90 transition-colors duration-300"
+                  >
+                    Send Inquiry
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -536,7 +536,7 @@ export default function App() {
             <div className="md:col-span-5">
               <div className="sticky top-32 rounded-3xl overflow-hidden shadow-xl">
                 {/* REPLACE WITH UPLOADED IMAGE URL */}
-                <img src="https://picsum.photos/seed/nadja/800/1000" alt="Nadja" className="w-full h-auto object-cover" referrerPolicy="no-referrer" />
+                <img src="/pictures/4.webp" alt="Nadja" className="w-full h-auto object-cover" />
               </div>
             </div>
             
@@ -638,7 +638,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="rounded-3xl overflow-hidden shadow-xl border border-aman-medium/20 h-[60vh] md:h-[70vh]">
             {/* REPLACE WITH UPLOADED IMAGE URL */}
-            <img src="https://picsum.photos/seed/ready/1920/1080" alt="Transition to Ready to Join" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/pictures/5.webp" alt="Transition to Ready to Join" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -669,20 +669,89 @@ export default function App() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-serif mb-6">Stay Connected</h2>
           <p className="text-lg mb-8 text-aman-offwhite/80">Join the mailing list for updates, insights, and future offerings.</p>
-          <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Your email address" 
-              className="px-6 py-3 rounded-full bg-aman-offwhite text-aman-dark focus:outline-none focus:ring-2 focus:ring-aman-highlight flex-grow"
-              required
-            />
-            <button 
-              type="submit"
-              className="px-8 py-3 bg-aman-highlight text-white rounded-full font-medium hover:bg-opacity-90 transition-colors duration-300"
+          <div className="mx-auto w-full max-w-md">
+            <form
+              id="notify-form"
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const emailInput = form.querySelector('#email-input') as HTMLInputElement | null;
+                const messageEl = document.getElementById('form-message');
+                const email = emailInput?.value.trim() || '';
+
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!email || !emailRegex.test(email)) {
+                  if (messageEl) {
+                    messageEl.textContent = 'Please enter a valid email address';
+                    messageEl.className = 'text-center text-sm mt-3 transition-all text-rose-400';
+                  }
+                  return;
+                }
+
+                if (messageEl) {
+                  messageEl.textContent = 'Submitting...';
+                  messageEl.className = 'text-center text-sm mt-3 transition-all text-aman-offwhite/70';
+                }
+
+                try {
+                  const googleFormId = '1FAIpQLSe9tZC6EXL0VmMy79pbIGDQwpofOfp0Uo_gAL12Ld7hQUXg8Q-9julRluQ2CXht0';
+                  const emailEntryId = 'entry.1420016806';
+                  const googleFormUrl = `https://docs.google.com/forms/d/${googleFormId}/formResponse?${emailEntryId}=${encodeURIComponent(email)}&submit=Submit`;
+
+                  const iframe = document.createElement('iframe');
+                  iframe.style.display = 'none';
+                  document.body.appendChild(iframe);
+
+                  let formSubmitted = false;
+
+                  iframe.onload = () => {
+                    if (formSubmitted && messageEl) {
+                      messageEl.textContent = "Your request has been logged. We'll be in touch when the time comes.";
+                      messageEl.className = 'text-center text-sm mt-3 transition-all text-emerald-400';
+                      form.reset();
+                    }
+                  };
+
+                  iframe.src = googleFormUrl;
+                  formSubmitted = true;
+
+                  setTimeout(() => {
+                    if (messageEl && messageEl.textContent === 'Submitting...') {
+                      messageEl.textContent = "Your request has been logged. We'll be in touch when the time comes.";
+                      messageEl.className = 'text-center text-sm mt-3 transition-all text-emerald-400';
+                      form.reset();
+                    }
+                    try { document.body.removeChild(iframe); } catch (_) {}
+                  }, 3000);
+                } catch (error) {
+                  if (messageEl) {
+                    messageEl.textContent = 'Something went wrong. Please try again.';
+                    messageEl.className = 'text-center text-sm mt-3 transition-all text-rose-400';
+                  }
+                  console.error('Form submission error:', error);
+                }
+              }}
             >
-              Subscribe
-            </button>
-          </form>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <input
+                  type="email"
+                  name="email"
+                  id="email-input"
+                  placeholder="enter your email"
+                  required
+                  className="flex-1 rounded-full border border-aman-offwhite/20 bg-aman-offwhite/10 text-aman-offwhite px-4 py-2 duration-300 focus:border-transparent focus:ring-1 focus:ring-aman-highlight focus:outline-none placeholder:text-aman-offwhite/50"
+                />
+                <button
+                  type="submit"
+                  className="rounded-full px-6 py-2 bg-aman-offwhite/10 hover:bg-aman-offwhite/20 border border-aman-offwhite/20 text-aman-offwhite/80 hover:text-aman-offwhite hover:border-aman-offwhite backdrop-blur-md duration-300 cursor-pointer"
+                >
+                  Subscribe
+                </button>
+              </div>
+              <div id="form-message" className="text-center text-sm"></div>
+            </form>
+          </div>
         </div>
       </section>
 
