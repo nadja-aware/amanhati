@@ -550,7 +550,7 @@ export default function App() {
 								<div className="space-y-4 text-xl text-aman-grey leading-relaxed">
 									<p>I don't believe we inspire by being perfect. We inspire by walking authentically and in full acceptance and love for ourselves.</p>
 									<p>To become "fully yourself" is, paradoxically, becoming nobody - letting go of the masks until what remains feels true.</p>
-									<p>Hope to me is not wishful thinking. Hope is what allows us to open - to life, to beauty, and to the possibility that we are still loved when we dare to be fully ourselves.
+									<p>Hope to me is not wishful thinking. Hope is what allows us to open – to life, to beauty, and to the possibility that we are still loved when we dare to be fully ourselves.
 								</div>
 							</div>
 						</div>

@@ -29,7 +29,6 @@ Edit the file App.tsx
 ## 🚀 How to Publish Your Updates
 
 If you (or your chatbot) have made changes to the website and you want to publish them to the live site, simply open your terminal here and run the following command:
-
 ```bash
 npm run update
 ```
