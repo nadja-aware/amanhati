@@ -8,6 +8,24 @@
 > 
 > When you use your chatbot to make changes to your website, it will edit the files in this folder. Once you are happy with the changes and want to publish them to the live website, follow the single step below.
 
+## Open terminal
+
+Go to Terminal > New Terminal
+
+
+## How to view the site
+
+```bash
+npm run dev
+```
+
+Cmd + Click on localhost.com
+
+
+## To edit text
+
+Edit the file App.tsx
+
 ## 🚀 How to Publish Your Updates
 
 If you (or your chatbot) have made changes to the website and you want to publish them to the live site, simply open your terminal here and run the following command:
