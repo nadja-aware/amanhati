@@ -548,14 +548,13 @@ export default function App() {
 							<div>
 								<h3 className="text-3xl font-serif mb-6 text-aman-medium">Life as Ceremony</h3>
 								<div className="space-y-4 text-xl text-aman-grey leading-relaxed">
-									<p>I don't believe we inspire by being perfect. We inspire by walking honestly.</p>
+									<p>I don't believe we inspire by being perfect. We inspire by walking authentically and in full acceptance and love for ourselves.</p>
 									<p>To become "fully yourself" is, paradoxically, becoming nobody - letting go of the masks until what remains feels true.</p>
-									<p>Hope to me is not wishful thinking. Hope is what remains when you decide to love yourself, see the beauty of life and share your all - especially when being seen feels uncomfortable.</p>
+									<p>Hope to me is not wishful thinking. Hope is what allows us to open - to life, to beauty, and to the possibility that we are still loved when we dare to be fully ourselves.
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 			</section>
 
 			{/* Is for you if Section */}
@@ -692,7 +691,7 @@ export default function App() {
 										}
 										try {
 											document.body.removeChild(iframe);
-										} catch (_) {}
+										} catch (_) { }
 									}, 3000);
 								} catch (error) {
 									if (messageEl) {
